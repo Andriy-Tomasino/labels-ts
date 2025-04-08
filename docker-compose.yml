@@ -1,12 +1,14 @@
 services:
-  server:
+  app:
     build: .
     ports:
       - "3000:3000"
     environment:
+      - NODE_ENV=production
       - MONGO_URL=mongodb://mongodb:27017/labelsDB
     networks:
       - net
+
 networks:
   net:
     external: true
