@@ -8,6 +8,6 @@ import { AppController } from './app.controller';
     MongooseModule.forRoot(process.env.MONGO_URL || 'mongodb://localhost:27017/labelsDB'),
     TemplatesModule,
   ],
-  controllers: [AppController], // Добавляем AppController
+  controllers: [AppController], 
 })
 export class AppModule {}

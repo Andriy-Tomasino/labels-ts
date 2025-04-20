@@ -1,0 +1,26 @@
+#!/bin/bash 
+
+BASE_URL="http://localhost:3000/api/templates"
+OUTPUT_FILE="get_response.json"
+ID="$1"
+
+# Check if ID is provided
+if [ -z "$ID" ]; then
+  echo "Fetching all templates..."
+  curl  -X GET "$BASE_URL" \
+    -H "Content-Type: application/json" \
+    -o "$OUTPUT_FILE"
+else
+  echo "Fetching template with ID: $ID..."
+  curl -s -X GET "$BASE_URL/$ID" \
+    -H "Content-Type: application/json" \
+    -o "$OUTPUT_FILE"
+fi
+
+# Check response status
+if [ $? -eq 0 ]; then
+  echo "Request successful. Response saved to $OUTPUT_FILE"
+  cat "$OUTPUT_FILE" | jq . # Pretty-print JSON (requires jq)
+else
+  echo "Request failed. Check $OUTPUT_FILE for details."
+fi

@@ -4,6 +4,6 @@ import { Controller, Get } from '@nestjs/common';
 export class AppController {
   @Get()
   getHello(): string {
-    return 'Welcome to the Templates API! Use /templates to manage templates.';
+    return 'Start position';
   }
 }

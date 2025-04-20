@@ -1,0 +1,1 @@
+[{"_id":"67f986088137d1c896d8bf74","name":"Test Template","color":"#352972","type":"label","attributes":[{"name":"Size","input_type":"select","mutable":true,"values":["Small","Large"],"default_value":"Small","_id":"67f986088137d1c896d8bf75"}],"__v":0}]
